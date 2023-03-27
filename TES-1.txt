@@ -1,0 +1,33 @@
+SSIS package "D:\ELI\project\data-warehouse\etl-warehouse\RAW_CHANGES_GRP_Perusahaan.dtsx" starting.
+Information: 0x40016040 at RAW_CHANGES_GRP_Perusahaan: The package is attempting to configure from SQL Server using the configuration string ""OLE_DB_WAREHOUSE_ETL";"[dbo].[SSIS_CONFIG]";"ADO_NET_DIGITAL_AJK";".
+Information: 0x40016040 at RAW_CHANGES_GRP_Perusahaan: The package is attempting to configure from SQL Server using the configuration string ""OLE_DB_WAREHOUSE_ETL";"[dbo].[SSIS_CONFIG]";"ADO_NET_WAREHOUSE_STAGING";".
+Information: 0x40016040 at RAW_CHANGES_GRP_Perusahaan: The package is attempting to configure from SQL Server using the configuration string ""OLE_DB_WAREHOUSE_ETL";"[dbo].[SSIS_CONFIG]";"OLE_DB_WAREHOUSE_ETL";".
+Information: 0x4004300A at EXTRACT CHANGES, SSIS.Pipeline: Validation phase is beginning.
+Information: 0x4002F304 at GET PROCESSING RANGE, CDC Control Task: "State value read from the state table [dbo].[cdc_states] with state name grp.Perusahaan is 'TFREDO/CS/0x001BEA210000AE700003/CE/0x001BEA210000AEF0000D/TS/2023-02-06T10:02:52.0393022/'.".
+Information: 0x4002F304 at GET PROCESSING RANGE, CDC Control Task: "Max LSN = 0x001BEA210000B0E00001".
+Information: 0x4002F304 at GET PROCESSING RANGE, CDC Control Task: "The State variable grp.Perusahaan was set to 'TFREDO/CS/0x001BEA210000AE700003/CE/0x001BEA210000B0E00001/TS/2023-02-06T10:09:27.1545132/'.".
+Information: 0x4002F304 at GET PROCESSING RANGE, CDC Control Task: "State variable grp.Perusahaan with value TFREDO/CS/0x001BEA210000AE700003/CE/0x001BEA210000B0E00001/TS/2023-02-06T10:09:27.1545132/ was saved to table [dbo].[cdc_states].".
+Warning: 0x4002F304 at GET PROCESSING RANGE, CDC Control Task: "Reprocessing of last range (TFREDO/CS/0x001BEA210000AE700003/CE/0x001BEA210000AEF0000D/TS/2023-02-06T10:02:52.0393022/).".
+Information: 0x4004300A at EXTRACT CHANGES, SSIS.Pipeline: Validation phase is beginning.
+Warning: 0x80049304 at EXTRACT CHANGES, SSIS.Pipeline: Warning: Could not open global shared memory to communicate with performance DLL; data flow performance counters are not available.  To resolve, run this package as an administrator, or on the system's console.
+Information: 0x40043006 at EXTRACT CHANGES, SSIS.Pipeline: Prepare for Execute phase is beginning.
+Information: 0x40043007 at EXTRACT CHANGES, SSIS.Pipeline: Pre-Execute phase is beginning.
+Information: 0x4004300C at EXTRACT CHANGES, SSIS.Pipeline: Execute phase is beginning.
+Information: 0x4002F304 at EXTRACT CHANGES, SOURCE [112]: "State variable value: TFREDO/CS/0x001BEA210000AE700003/CE/0x001BEA210000B0E00001/TS/2023-02-06T10:09:27.1545132/ ".
+Information: 0x4002F304 at EXTRACT CHANGES, SOURCE [112]: "Command text to execute: select [__$start_lsn],[__$seqval],[__$operation],[__$update_mask],[No_Prs],[Tahun_Masuk],[Tgl_Masuk],[Group_Perusahaan],[GOG],[Id_GDivisi],[GT_OG],[Afiliasi],[Nama_Perusahaan],[Alamat],[Alamata],[Kota],[Kode_Pos],[Telepon],[Fax],[Email],[Alamat2],[Alamatb],[Kota2],[Kode_Pos2],[Telepon2],[Fax2],[Email2],[Alamat3],[Alamatc],[Kota3],[Kode_Pos3],[Telepon3],[Fax3],[Email3],[Bidang_Usaha],[Pimpinan],[Jml_Peserta],[Contact_Person],[Tgl_Lahir],[Status],[Create_By],[Create_Date],[Change_By],[Change_Date],[Nama_Pendek],[id_lapangan_usaha],[reas_ya] from [cdc].[fn_cdc_get_all_changes_dbo_Perusahaan](CONVERT(binary(10), @cs, 1), CONVERT(binary(10), @ce, 1), @mode).".
+Information: 0x4002F304 at EXTRACT CHANGES, SOURCE [112]: "@ce - 0x001BEA210000B0E00001".
+Information: 0x4002F304 at EXTRACT CHANGES, SOURCE [112]: "@mode - all".
+Information: 0x4002F304 at EXTRACT CHANGES, SOURCE [112]: "@cs - 0x001BEA210000AE700004".
+Error: 0xC0202009 at EXTRACT CHANGES, STAGING DELETE [268]: SSIS Error Code DTS_E_OLEDBERROR.  An OLE DB error has occurred. Error code: 0x80040E2F.
+An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80040E2F  Description: "The statement has been terminated.".
+An OLE DB record is available.  Source: "Microsoft SQL Server Native Client 11.0"  Hresult: 0x80040E2F  Description: "Cannot insert duplicate key row in object 'grp.Perusahaan' with unique index 'ix_grp_Perusahaan_1'. The duplicate key value is (2908991, 2023-02-06 17:09:33.0266667).".
+Error: 0xC0209029 at EXTRACT CHANGES, STAGING DELETE [268]: SSIS Error Code DTS_E_INDUCEDTRANSFORMFAILUREONERROR.  The "STAGING DELETE.Inputs[OLE DB Command Input]" failed because error code 0xC020906E occurred, and the error row disposition on "STAGING DELETE.Inputs[OLE DB Command Input]" specifies failure on error. An error occurred on the specified object of the specified component.  There may be error messages posted before this with more information about the failure.
+Error: 0xC0047022 at EXTRACT CHANGES, SSIS.Pipeline: SSIS Error Code DTS_E_PROCESSINPUTFAILED.  The ProcessInput method on component "STAGING DELETE" (268) failed with error code 0xC0209029 while processing input "OLE DB Command Input" (273). The identified component returned an error from the ProcessInput method. The error is specific to the component, but the error is fatal and will cause the Data Flow task to stop running.  There may be error messages posted before this with more information about the failure.
+Information: 0x40043008 at EXTRACT CHANGES, SSIS.Pipeline: Post Execute phase is beginning.
+Information: 0x4004300B at EXTRACT CHANGES, SSIS.Pipeline: "STAGING INSERT" wrote 0 rows.
+Information: 0x40043009 at EXTRACT CHANGES, SSIS.Pipeline: Cleanup phase is beginning.
+Task failed: EXTRACT CHANGES
+Warning: 0x80019002 at EXTRACT CHANGES: SSIS Warning Code DTS_W_MAXIMUMERRORCOUNTREACHED.  The Execution method succeeded, but the number of errors raised (3) reached the maximum allowed (1); resulting in failure. This occurs when the number of errors reaches the number specified in MaximumErrorCount. Change the MaximumErrorCount or fix the errors.
+Warning: 0x80019002 at RAW_CHANGES_GRP_Perusahaan: SSIS Warning Code DTS_W_MAXIMUMERRORCOUNTREACHED.  The Execution method succeeded, but the number of errors raised (3) reached the maximum allowed (1); resulting in failure. This occurs when the number of errors reaches the number specified in MaximumErrorCount. Change the MaximumErrorCount or fix the errors.
+SSIS package "D:\ELI\project\data-warehouse\etl-warehouse\RAW_CHANGES_GRP_Perusahaan.dtsx" finished: Failure.
+The program '[18168] DtsDebugHost.exe: DTS' has exited with code 0 (0x0).
